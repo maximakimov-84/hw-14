@@ -1,0 +1,10 @@
+---
+- name: Install vim and zip packages
+  hosts: demo-ansible-ubuntu-servers
+  tasks:
+    - name: Install required packages
+      package:
+        name:
+          - vim
+          - zip
+        state: present

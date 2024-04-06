@@ -1,0 +1,5 @@
+---
+- name: Playbook using common role
+  hosts: demo-ansible-ubuntu-servers
+  roles:
+    - common

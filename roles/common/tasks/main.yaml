@@ -1,0 +1,20 @@
+---
+- name: Playbook using common task twice (demonstration)
+  hosts: demo-ansible-ubuntu-servers
+  tasks:
+    - name: Install required packages
+      package:
+        name:
+          - vim
+          - zip
+        state: present
+    - name: Copy test1 file to dest servers
+      copy:
+        dest:  /tmp/
+        src:  test1
+    - name: Copy test2 template-based file to dest servers
+      template:
+        src:  test2
+        dest:  /tmp/
+      vars:
+        hostname: "{{ ansible_hostname }}"
